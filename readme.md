@@ -20,12 +20,12 @@ _Business understanding_ bertujuan untuk menggali pengetahuan (_discovering   kn
 ## Problem Statements
 Berdasarkan masalah yang terpapar pada latar belakang, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
 - Bagaimana penerapan algoritma _Random Forest_ dalam prediksi pengunduran diri karyawan?
-- Bagaimana hasil evaluasi performa algoritma _Random Forest_ dengan menggunakan Confusion Matrix?
+- Bagaimana hasil evaluasi performa algoritma _Random Forest_ menggunakan _Confusion Matrix_?
 
 ## Goals
 Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
 - Untuk memperoleh model klasifikasi Random Forest dalam memprediksi pengunduran diri karyawan
-- Untuk mengetahui evaluasi performa model  Random Forest menggunakan Confussion Matrix 
+- Untuk mengetahui evaluasi performa model  Random Forest menggunakan _Confussion Matrix_ 
 
 
 ## Solution statements
@@ -34,11 +34,11 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
    - Melakukan transformasi data dengan mengubah data kategorikal menjadi data numerik
    - Melakukan _balancing_ data untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset
 2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
-3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix d
+3. Melakukan evaluasi uji performa model menggunakan _Confusion Matrix_ 
       
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. 
-Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kaggle](https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link)  yang terdiri dari 1499 record dan 11 atribut
+Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kaggle](https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link)  yang terdiri dari 14993 record dan 11 atribut
 
 |     No     |     Emp_Id      |     satisfaction_level    |     last_evaluation    |     ...    |     salary    |
 |------------|-----------------|---------------------------|------------------------|------------|---------------|
