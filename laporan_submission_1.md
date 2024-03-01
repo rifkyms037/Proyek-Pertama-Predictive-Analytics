@@ -1,41 +1,30 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Rifky Muhammad Shidiq
+---
 
 ## Domain Proyek
+---
 
+### Latar Belakang
 Pengunduran diri karyawan adalah merupakan keluarnya karyawan dari suatu perusahaan yang bisa disebabkan oleh faktor-faktor tertentu. Karyawan yang mengundurkan diri pada suatu perusahaan mengakibatkan pemutusan hubungan kerja dengan perusahaan, maka dengan itu berakhirlah kewajiban dan juga hak karyawan juga perusahaan. Pengunduran diri karyawan juga merupakan suatu isu yang signifikan dalam manajemen sumber daya manusia. Pengunduran diri karyawan ini juga dapat menyebabkan kerugian finansial bagi suatu perusahaan (Pangkey, 2012). Menurut data yang diambil dari Data Indonesia.id. penduduk Indonesia yang melakukan resign memiliki persentase sebesar 84% dimana itu merupakan angka yang cukup besar. Jumlah karyawan mengundurkan diri yang tinggi pada perusahaan dapat menimbulkan kemunduran bisnis, oleh karena itu perusahaan membutuhkan suatu model prediksi yang dapat membantu mengidentifikasi karyawan potensial yang mungkin akan mengundurkan diri di masa mendatang.
 
-Salah satu metode yang dapat digunakan untuk prediksi tersebut adalah menggunakan algoritma Random Forest. Random Forest adalah metode pembelajaran mesin yang menggabungkan beberapa pohon keputusan (decision tree) untuk membuat prediksi yang lebih akurat. Dengan menggunakan algoritma Random Forest, perusahaan dapat memanfaatkan data historis, seperti riwayat karyawan, umur, pendidikan, kepuasan kerja, dan faktor-faktor lain yang relevan, untuk membangun model yang dapat memprediksi kemungkinan pengunduran diri karyawan.
+Salah satu metode yang dapat digunakan untuk prediksi tersebut adalah menggunakan algoritma _Random Forest_. _Random Forest_ adalah metode pembelajaran mesin yang menggabungkan beberapa pohon keputusan (_decision tree_) untuk membuat prediksi yang lebih akurat. Dengan menggunakan algoritma _Random Forest_, perusahaan dapat memanfaatkan data historis, seperti riwayat karyawan, umur, pendidikan, kepuasan kerja, dan faktor-faktor lain yang relevan, untuk membangun model yang dapat memprediksi kemungkinan pengunduran diri karyawan.
 
-Berdasarkan permasalahan tersebut, maka akan dilakukan penelitian prediksi pengunduran diri karyawan menggunakan Random Forest agar  perusahaan dapat mengambil langkah-langkah pencegahan yang tepat untuk meminimalisir pengunduran diri karyawan, mengurangi pengeluaran yang harus dikeluarkan dalam bentuk uang pesangon, serta menghindari kesulitan dalam mencari dan melatih ulang karyawan baru.
+Berdasarkan permasalahan tersebut, maka akan dilakukan prediksi pengunduran diri karyawan menggunakan _Random Forest_ agar  perusahaan dapat mengambil langkah-langkah pencegahan yang tepat untuk meminimalisir pengunduran diri karyawan, mengurangi pengeluaran yang harus dikeluarkan dalam bentuk uang pesangon, serta menghindari kesulitan dalam mencari dan melatih ulang karyawan baru.
 
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
 - Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
-   - Menangani missing value pada data
-   - Mencari korelasi pada data untuk mencari dependant variable dan independent variable
-   - Menangani outlier pada data dengan menggunakan IQR Method
-   - Melakukan normalisasi pada data terutama pada fitur numerik
-2. Membuat model regresi untuk memprediksi bilangan kontinu untuk memprediksi harga yang akan datang. Berikut beberapa algoritma yang digunakan pada proyek ini :
-   - Support Vector Machine (Support Vector Regression)
-   - K-Nearest Neighbors
-   - Boosting Algorithm (Gradient Boosting Regression)
-   - Melakukan hyperparameter tuning agar model dapat berjalan pada performa terbaik dengan menggunakan teknik Grid Search
+
     
 
 ## Business Understanding
-
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
+--
 
 ### Problem Statements
-
 Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Bagaimana penerapan algoritma _Random Forest_ dalam prediksi pengunduran diri karyawan?
+- Bagaimana hasil evaluasi performa algoritma _Random Forest_ dengan menggunakan Confusion Matrix dan Cross Validation
 
 ### Goals
 Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
@@ -48,8 +37,15 @@ Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pe
 - Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
+    1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
+       - Menangani missing value pada data
+       - Melakukan transformasi data dengan mengubah data kategorikal menjadi data numerik
+       - Melakukan _balancing_ data untuk memanipulasi dataset agar mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset
+       - Melakukan normalisasi pada data terutama pada fitur numerik
+   2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
+   3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix dan Cross Validation
+      - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
+
 
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. Langkah-langkah yang dilakukan pada tahapan ini adalah:
