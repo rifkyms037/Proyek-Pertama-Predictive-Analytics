@@ -68,7 +68,8 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 
 ### Exploratory Data Analysis:
 Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna memahami karakteristik data
-1. Tingkat kepuasan rata-rata untuk setiap departemen
+
+* Tingkat kepuasan rata-rata untuk setiap departemen
    
 ![](Proyek-Pertama-Predictive-Analytics/assets/images/gaji.jpg)
 
@@ -78,11 +79,11 @@ Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah d
 
 Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan rata-rata karyawan di berbagai departemen dalam sebuah perusahaan, sehingga bisa membantu profesional sumber daya manusia atau manajer untuk mengidentifikasi tingkat kepuasan tiap departemen 
 
-2. Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
+* Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
 /assets/images/Pengaruh jumlah proyek.png
 Gambar diatas merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
-3. Korelasi Tiap Variabel
+* Korelasi Tiap Variabel
 /assets/images/heatmap.png
 Berdasarkan gambar tersebut, interpretasinya yaitu :
 * Korelasi antara satisfaction_level dengan variabel lain:
