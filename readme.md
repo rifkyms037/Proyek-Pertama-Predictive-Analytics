@@ -18,7 +18,7 @@ Berdasarkan permasalahan tersebut, maka akan dilakukan prediksi pengunduran diri
 _Business understanding_ bertujuan untuk menggali pengetahuan (_discovering   knowledge_) mengenai pemodelan aturan untuk memprediksi pengunduran diri karyawan apakah tergolong dalam klasifikasi mengundurkan diri atau tidak berdasarkan dataset yang dimiliki perusahaan.
 
 ### Problem Statements
-Menjelaskan pernyataan masalah latar belakang:
+Berdasarkan masalah yang terpapar pada latar belakang, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
 - Bagaimana penerapan algoritma _Random Forest_ dalam prediksi pengunduran diri karyawan?
 - Bagaimana hasil evaluasi performa algoritma _Random Forest_ dengan menggunakan Confusion Matrix dan Cross Validation
 
@@ -66,10 +66,10 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 11. **salary**: Atribut ini menunjukkan tingkat gaji karyawan. Nilai gaji dalam contoh dataset ini adalah "low" (rendah) dan "medium" (sedang). Gaji dapat memberikan indikasi tentang tingkat kompensasi dan penghargaan karyawan.
 
 
-**Exploratory Data Analysis:
+###Exploratory Data Analysis:
 Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna memahami karakteristik data
 1. Tingkat kepuasan rata-rata untuk setiap departemen
-
+/assets/images/gaji.png
 Gambar diatas merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
@@ -77,11 +77,11 @@ Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah d
 Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan rata-rata karyawan di berbagai departemen dalam sebuah perusahaan, sehingga bisa membantu profesional sumber daya manusia atau manajer untuk mengidentifikasi tingkat kepuasan tiap departemen 
 
 2. Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
-
+/assets/images/Pengaruh jumlah proyek.png
 Gambar diatas merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
 3. Korelasi Tiap Variabel
-
+/assets/images/heatmap.png
 Berdasarkan gambar tersebut, interpretasinya yaitu :
 * Korelasi antara satisfaction_level dengan variabel lain:
   - Korelasi negatif yang sedang dengan _left_ (-0.388375) yang menunjukkan bahwa semakin rendah tingkat kepuasan karyawan (_satisfaction_level_), semakin tinggi kemungkinan mereka akan meninggalkan perusahaan (_left_).
