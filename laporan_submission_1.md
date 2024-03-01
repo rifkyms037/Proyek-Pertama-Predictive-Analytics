@@ -12,8 +12,17 @@ Berdasarkan permasalahan tersebut, maka akan dilakukan penelitian prediksi pengu
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
 - Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-  
+1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
+- Menangani missing value pada data
+- Mencari korelasi pada data untuk mencari dependant variable dan independent variable
+- Menangani outlier pada data dengan menggunakan IQR Method
+- Melakukan normalisasi pada data terutama pada fitur numerik
+2. Membuat model regresi untuk memprediksi bilangan kontinu untuk memprediksi harga yang akan datang. Berikut beberapa algoritma yang digunakan pada proyek ini :
+- Support Vector Machine (Support Vector Regression)
+- K-Nearest Neighbors
+- Boosting Algorithm (Gradient Boosting Regression)
+- Melakukan hyperparameter tuning agar model dapat berjalan pada performa terbaik dengan menggunakan teknik Grid Search
+    
 
 ## Business Understanding
 
@@ -44,7 +53,8 @@ Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pe
 
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. Langkah-langkah yang dilakukan pada tahapan ini adalah:
-Dataset yang digunakan diperoleh dari penyedia dataset online yaitu kaggle dengan link [https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link] yang terdiri dari 1499 record dan 11 atribut
+Dataset yang digunakan diperoleh dari penyedia dataset online yaitu [kaggle](https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link)  yang terdiri dari 1499 record dan 11 atribut
+
 |     No      |     Emp_Id      |     satisfaction_level    |     last_evaluation    |     ...    |     salary    |
 |-------------|-----------------|---------------------------|------------------------|------------|---------------|
 |     1.      |     IND02438    |     38%                   |     53%                |     ...    |     low       |
