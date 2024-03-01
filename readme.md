@@ -66,7 +66,7 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 11. **salary**: Atribut ini menunjukkan tingkat gaji karyawan. Nilai gaji dalam contoh dataset ini adalah "low" (rendah) dan "medium" (sedang). Gaji dapat memberikan indikasi tentang tingkat kompensasi dan penghargaan karyawan.
 
 
-###Exploratory Data Analysis:
+### Exploratory Data Analysis:
 Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna memahami karakteristik data
 1. Tingkat kepuasan rata-rata untuk setiap departemen
 /assets/images/gaji.png
