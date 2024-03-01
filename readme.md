@@ -70,7 +70,7 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna memahami karakteristik data
 
 1. Tingkat kepuasan rata-rata untuk setiap departemen
-<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/gaji.png" width="350"/></div>
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/gaji.png" width="500"/></div>
 Gambar diatas merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
@@ -78,12 +78,12 @@ Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah d
 Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan rata-rata karyawan di berbagai departemen dalam sebuah perusahaan, sehingga bisa membantu profesional sumber daya manusia atau manajer untuk mengidentifikasi tingkat kepuasan tiap departemen 
 
 2. Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
-<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/Pengaruh%20jumlah%20proyek.png" width="350"/></div>
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/Pengaruh%20jumlah%20proyek.png" width="500"/></div>
 
 Gambar diatas merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
 4. Korelasi Tiap Variabel
-<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/heatmap.png" width="350"/></div>
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/heatmap.png" width="500"/></div>
 
 Berdasarkan gambar tersebut, interpretasinya yaitu :
 * Korelasi antara satisfaction_level dengan variabel lain:
@@ -109,9 +109,9 @@ Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan D
 Data transformation, adalah pengubahan format menjadi bentuk yang lebih sesuai proses data mining. Berikut merupakan proses transformasi data yang dilakukan :
 **Data _Balancing_**
 Data balancing, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (Synthetic Minority Over-sampling Technique) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
-![](Proyek-Pertama-Predictive-Analytics/assets/images/imbalanced.png)
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
 Berdasarkan Gambar 4, terdapat imbalance data pada atribut target yaitu left, dimana  terdapat imbalance pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python. Berikut hasil dari balancing yang telah dilakukan :
-![](Proyek-Pertama-Predictive-Analytics/assets/images/balanced.png)
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/balanced.png" width="500"/></div>
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
