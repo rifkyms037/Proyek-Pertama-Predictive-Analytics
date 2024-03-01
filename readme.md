@@ -1,4 +1,4 @@
-![image](https://github.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/assets/114732976/d0640775-9dc6-4119-be28-cf2fb67f6a14)# Laporan Proyek Machine Learning - Rifky Muhammad Shidiq
+# Laporan Proyek Machine Learning - Rifky Muhammad Shidiq
 ---
 
 ## Domain Proyek
@@ -20,7 +20,7 @@ _Business understanding_ bertujuan untuk menggali pengetahuan (_discovering   kn
 ## Problem Statements
 Berdasarkan masalah yang terpapar pada latar belakang, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
 - Bagaimana penerapan algoritma _Random Forest_ dalam prediksi pengunduran diri karyawan?
-- Bagaimana hasil evaluasi performa algoritma _Random Forest_ dengan menggunakan Confusion Matrix dan Cross Validation
+- Bagaimana hasil evaluasi performa algoritma _Random Forest_ dengan menggunakan Confusion Matrix?
 
 ## Goals
 Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
@@ -36,7 +36,7 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
    - Melakukan _balancing_ data untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset
    - Melakukan normalisasi pada data terutama pada fitur numerik
 2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
-3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix dan Cross Validation
+3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix d
       
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. 
@@ -52,7 +52,7 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 |     ...    |     ...         |     ...                   |     ...                |     ...    |     ...       |
 |     14999  |     IND11649    |     37%                   |     52%                |     ...    |     low       |
 
-## Variabel-variabel pada _HR Employee_ dataset adalah sebagai berikut: 
+### Variabel-variabel pada _HR Employee_ dataset adalah sebagai berikut: 
 1. **Emp_Id**: Atribut ini adalah ID karyawan yang merupakan pengenal unik untuk setiap karyawan dalam dataset. ID ini digunakan untuk mengidentifikasi setiap entitas karyawan secara unik.
 2.** satisfaction_level**: Atribut ini menggambarkan tingkat kepuasan karyawan dalam bentuk persentase. Ini dapat mencerminkan kepuasan karyawan terhadap pekerjaan, lingkungan kerja, manajemen, dan faktor-faktor lainnya yang mempengaruhi kepuasan mereka.
 3. **last_evaluation**: Atribut ini mencerminkan penilaian terakhir karyawan dalam bentuk persentase. Hal ini dapat mencakup penilaian kinerja karyawan oleh atasan atau sistem evaluasi kinerja perusahaan.
@@ -105,11 +105,12 @@ Berdasarkan gambar tersebut, interpretasinya yaitu :
 
 ## Data Preparation
 Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (_Data Preparation_). Berikut langkah-langkah yang harus dilakukan pada data _preparation_ :
-# **Data _Transformation_**
+### **Data _Transformation_**
 Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses _data mining_. Berikut merupakan proses transformasi data yang dilakukan :
-<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.png" width="500"/></div>
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.png" width="300"/></div>
+Berdasarkan Gambar diatas, proses transformasi data dilakukan pada atribut salary, dan departement dengan mengubah data kategorikal menjadi data numerik. Proses transformasi data dilakukan juga pada atribut satisfication_level, seperti mengubah isi baris 38% menjadi 0.38 dan seterusnya.
 
-# **Data _Balancing_**
+### **Data _Balancing_**
 _Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
 Berdasarkan Gambar 4, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman _python._ Berikut hasil dari _data balancing_ yang telah dilakukan :
@@ -128,32 +129,32 @@ Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang di
 Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode_ classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
 Keterangan :
-1. **True Positive** (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
-2. **True Negative** (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
-3. **False Positive_* (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
-4. **False Negative** (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
+1. **_True Positive_** (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
+2. **_True Negative_** (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
+3. **_False Positive_* (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
+4. **_False Negative_** (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
 Dari _confusion matrix_, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
-
+### Akurasi
 Akurasi adalah sebuah metrik evaluasi yang menghitung seberapa banyak prediksi yang benar dari seluruh prediksi yang dilakukan oleh sebuah model.  
 Dengan rumus :
-# Akurasi = (TP + TN) / (TP + TN + FP + FN)
+Akurasi = (TP + TN) / (TP + TN + FP + FN)
 Keterangan :
-TP = True Positive.
-TN = True Negative
-FP = False Positive
-FN = False Negative
-
-# Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model. Dengan rumus :
+TP = _True Positive_.
+TN = _True Negative_.
+FP = _False Positive_.
+FN = _False Negative_.
+### Presisi
+Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model. Dengan rumus :
 Presisi=  TP/(TP+FP)                                                                                                   
 Keterangan: 
-TP = True Positive.
-FP = False Positive
-
-# Recall adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
-Recall=  TP/(TP+FN)                                                                                                 
+TP = _True Positive_.
+FP = _False Positive_.
+### _Recall_
+_Recall_ adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
+_Recall_ =  TP/(TP+FN)                                                                                                 
 Keterangan:
-TP = True Positive.
-FN False Negative
+TP = _True Positive_.
+FN = _False Negative_.
 
 Berikut merupakan nilai confussion matrix yang diperoleh :
 |                     |     Predicted Not Left    |     Predicted Left    |
@@ -164,15 +165,15 @@ Berikut merupakan nilai confussion matrix yang diperoleh :
 Berdasarkan Tabel diatas diperoleh prediksi tidak _left_ terhadap prediksi benar tidak _left_ sebanyak 3381 sedangkan prediksi tidak _left_ terhadap prediksi benar _left_ sebesar 111 dan prediksi left terhadap benar tidak _left_ sebesar 17 sedangkan prediksi left terhadap benar left sebanyak 3348. Sehingga dari Tabel 4 diperoleh nilai akurasi, presisi, dan _recall_ sebagai berikut :
 
 Proses untuk mengetahui nilai akurasi dilakukan pada persamaan akurasi sebagai berikut :
-# Akurasi = (TP+TN)/(TP+TN+FP+FN) 
+Akurasi = (TP+TN)/(TP+TN+FP+FN) 
 =  (3348+3381)/(3348+3381+17+111)=0.98133 
 
 Sedangkan, pada proses perhitungan presisi dilakukan pada persamaan presisi sebagai berikut :
-# Presisi = TP/(TP+FP)     
+Presisi = TP/(TP+FP)     
 =  3348/(3348+17)=0.99498 
 
 Kemudian, untuk menghitung recall dilakukan pada persamaan _recall_ sebagai berikut :
-# Recall = TP/(TP+FN) 
+Recall = TP/(TP+FN) 
 =  3348/(3348+111)=0.96791 
 
 Setelah melakukan perhitungan performa model, diperoleh tingkat akurasi sebesar 98.13%, presisi sebesar 99.48% dan recall sebesar 96.79%. Sehingga prediksi pengunduran diri karyawan menggunakan confussion matrix dapat dikategorikan sebagai excellent classification (Koniyo & Sudarma, 2020)
