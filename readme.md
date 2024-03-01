@@ -104,38 +104,78 @@ Berdasarkan gambar tersebut, interpretasinya yaitu :
 
 
 ## Data Preparation
-Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (Data Preparation). Berikut langkah-langkah yang harus dilakukan pada data preparation :
+Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (_Data Preparation_). Berikut langkah-langkah yang harus dilakukan pada data _preparation_ :
 **Data _Transformation_**
-Data transformation, adalah pengubahan format menjadi bentuk yang lebih sesuai proses data mining. Berikut merupakan proses transformasi data yang dilakukan :
+Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses _data mining_. Berikut merupakan proses transformasi data yang dilakukan :
 **Data _Balancing_**
-Data balancing, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (Synthetic Minority Over-sampling Technique) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
+_Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
-Berdasarkan Gambar 4, terdapat imbalance data pada atribut target yaitu left, dimana  terdapat imbalance pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python. Berikut hasil dari balancing yang telah dilakukan :
+Berdasarkan Gambar 4, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman _python._ Berikut hasil dari _data balancing_ yang telah dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/balanced.png" width="500"/></div>
+Proses _balancing data_ telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Setelah melakukan beberapa proses sebelumnya, sehingga data siap untuk diproses, tahap selanjutnya yaitu melakukan proses modelling dengan tujuan untuk mengembangkan model prediktif yang dapat digunakan untuk melakukan analisis lebih lanjut dan membuat prediksi pengunduran diri karyawan. Teknik permodelan yang akan digunakan pada penelitian ini adalah algoritma Random Forest. Random Forest adalah  adalah algoritma machine learning yang terdiri dari banyak pohon keputusan yang dibuat melalui proses bagging atau bootstrap aggregating (Normah et al., 2022), lalu digabungkan untuk menghasilkan hasil akhir. Bagging atau bootstrap aggregating adalah teknik pembentukan model dengan membangun banyak model keputusan pada sampel data yang berbeda-beda dan akhirnya menggabungkan hasil prediksi dari model-model tersebut. Dengan demikian, Random Forest dapat menghasilkan prediksi yang lebih akurat dan tahan terhadap overfitting. 
+Cara kerja dari Random Forest terdiri dari dua fase utama. Fase pertama yaitu menggabungkan jumlah N pohon keputusan dengan melibatkan pembuatan dari algoritma Random Forest, setelah pohon keputusan dari sejumlah N yang terbentuk, selanjutnya dilanjutkan pada fase kedua, yaitu membuat prediksi dari setiap decision tree yang telah dibuat pada fase pertama.
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/image.png" width="500"/></div>
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang digunakan sebagai input dan variabel Y sebagai target yaitu mengundurkan diri atau tidak mengundurkan diri. Kemudian dilakukan pembagian dataset menjadi data training dan data testing dengan rasio sebesar 70%:30% dari jumlah dataset sebanyak 1499 data. Selanjutnya melakukan penyetelan parameter Random Forest untuk mencapai kinerja yang optimal, beberapa parameter yang digunakan pada penelitian ini adalah n_estimator sebanyak 10 pohon untuk mengontrol jumlah pohon yang dibangun  dan random state sebanyak 19. Setelah proses pengembangan model Random Forest dan penyetelan parameter dilakukan, selanjutnya dilakukan evaluasi uji performa untuk mengukur kinerja  suatu model.
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode_ classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
+Keterangan :
+1.	_True Positive_ (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
+2.	_True Negative_ (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
+3.	_False Positive_ (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
+4.	_False Negative_ (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
+Dari confusion matrix, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+Akurasi adalah sebuah metrik evaluasi yang menghitung seberapa banyak prediksi yang benar dari seluruh prediksi yang dilakukan oleh sebuah model.  
+Dengan rumus :
+Akurasi = (TP + TN) / (TP + TN + FP + FN)
+Keterangan :
+TP = True Positive.
+TN = True Negative
+FP = False Positive
+FN = False Negative
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model. Dengan rumus :
+Presisi=  TP/(TP+FP)                                                                                                   
+Keterangan: 
+TP = True Positive.
+FP = False Positive
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Recall adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
+Recall=  TP/(TP+FN)                                                                                                 
+Keterangan:
+TP = True Positive.
+FN False Negative
+
+Berikut merupakan nilai confussion matrix yang diperoleh :
+|                     |     Predicted Not Left    |     Predicted Left    |
+|---------------------|---------------------------|-----------------------|
+|     True No Left    |     3381                  |     17                |
+|     True Left       |     111                   |     3348              |
+
+Berdasarkan Tabel diatas diperoleh prediksi tidak _left_ terhadap prediksi benar tidak _left_ sebanyak 3381 sedangkan prediksi tidak _left_ terhadap prediksi benar _left_ sebesar 111 dan prediksi left terhadap benar tidak _left_ sebesar 17 sedangkan prediksi left terhadap benar left sebanyak 3348. Sehingga dari Tabel 4 diperoleh nilai akurasi, presisi, dan _recall_ sebagai berikut :
+Proses untuk mengetahui nilai akurasi dilakukan pada persamaan akurasi sebagai berikut :
+Akurasi = (TP+TN)/(TP+TN+FP+FN) 
+=  (3348+3381)/(3348+3381+17+111)=0.98133 
+
+Sedangkan, pada proses perhitungan presisi dilakukan pada persamaan presisi sebagai berikut :
+Presisi = TP/(TP+FP)     
+=  3348/(3348+17)=0.99498 
+
+Kemudian, untuk menghitung recall dilakukan pada persamaan _recall_ sebagai berikut :
+Recall = TP/(TP+FN) 
+=  3348/(3348+111)=0.96791 
+
+Setelah melakukan perhitungan performa model, diperoleh tingkat akurasi sebesar 98.13%, presisi sebesar 99.48% dan recall sebesar 96.79%. Sehingga prediksi pengunduran diri karyawan menggunakan confussion matrix dapat dikategorikan sebagai excellent classification (Koniyo & Sudarma, 2020)
+
+
+
 
 **---Ini adalah bagian akhir laporan---**
 
