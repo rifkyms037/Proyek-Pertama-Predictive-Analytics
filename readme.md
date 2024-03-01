@@ -69,7 +69,9 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 ### Exploratory Data Analysis:
 Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna memahami karakteristik data
 1. Tingkat kepuasan rata-rata untuk setiap departemen
-/assets/images/gaji.png
+   
+![](Proyek-Pertama-Predictive-Analytics/assets/images/gaji.jpg)
+
 Gambar diatas merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
