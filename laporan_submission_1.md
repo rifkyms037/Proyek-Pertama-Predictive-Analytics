@@ -19,7 +19,7 @@ Berdasarkan permasalahan tersebut, maka akan dilakukan prediksi pengunduran diri
     
 
 ## Business Understanding
---
+---
 
 ### Problem Statements
 Menjelaskan pernyataan masalah latar belakang:
@@ -31,20 +31,16 @@ Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
 - Untuk memperoleh model klasifikasi Random Forest dalam memprediksi pengunduran diri karyawan
 - Untuk mengetahui evaluasi performa model  Random Forest menggunakan Confussion Matrix 
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
-
-    ### Solution statements
-    1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
-       - Menangani missing value pada data
-       - Melakukan transformasi data dengan mengubah data kategorikal menjadi data numerik
-       - Melakukan _balancing_ data untuk memanipulasi dataset agar mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset
-       - Melakukan normalisasi pada data terutama pada fitur numerik
-   2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
-   3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix dan Cross Validation
-      - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
+### Solution statements
+1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
+   - Menangani_ missing value_ pada data
+   - Melakukan transformasi data dengan mengubah data kategorikal menjadi data numerik
+   - Melakukan _balancing_ data untuk memanipulasi dataset agar mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset
+   - Melakukan normalisasi pada data terutama pada fitur numerik
+2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
+3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix dan Cross Validation
+      
 
 
 ## Data Understanding
