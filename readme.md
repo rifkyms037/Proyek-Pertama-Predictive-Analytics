@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Rifky Muhammad Shidiq
+![image](https://github.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/assets/114732976/d0640775-9dc6-4119-be28-cf2fb67f6a14)# Laporan Proyek Machine Learning - Rifky Muhammad Shidiq
 ---
 
 ## Domain Proyek
@@ -105,9 +105,11 @@ Berdasarkan gambar tersebut, interpretasinya yaitu :
 
 ## Data Preparation
 Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (_Data Preparation_). Berikut langkah-langkah yang harus dilakukan pada data _preparation_ :
-**Data _Transformation_**
+# **Data _Transformation_**
 Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses _data mining_. Berikut merupakan proses transformasi data yang dilakukan :
-**Data _Balancing_**
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.png" width="500"/></div>
+
+# **Data _Balancing_**
 _Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
 Berdasarkan Gambar 4, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman _python._ Berikut hasil dari _data balancing_ yang telah dilakukan :
@@ -126,28 +128,28 @@ Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang di
 Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode_ classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
 Keterangan :
-1.	_True Positive_ (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
-2.	_True Negative_ (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
-3.	_False Positive_ (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
-4.	_False Negative_ (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
-Dari confusion matrix, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
+1. **True Positive** (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
+2. **True Negative** (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
+3. **False Positive_* (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
+4. **False Negative** (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
+Dari _confusion matrix_, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
 
 Akurasi adalah sebuah metrik evaluasi yang menghitung seberapa banyak prediksi yang benar dari seluruh prediksi yang dilakukan oleh sebuah model.  
 Dengan rumus :
-Akurasi = (TP + TN) / (TP + TN + FP + FN)
+# Akurasi = (TP + TN) / (TP + TN + FP + FN)
 Keterangan :
 TP = True Positive.
 TN = True Negative
 FP = False Positive
 FN = False Negative
 
-Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model. Dengan rumus :
+# Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model. Dengan rumus :
 Presisi=  TP/(TP+FP)                                                                                                   
 Keterangan: 
 TP = True Positive.
 FP = False Positive
 
-Recall adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
+# Recall adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
 Recall=  TP/(TP+FN)                                                                                                 
 Keterangan:
 TP = True Positive.
@@ -160,16 +162,17 @@ Berikut merupakan nilai confussion matrix yang diperoleh :
 |     True Left       |     111                   |     3348              |
 
 Berdasarkan Tabel diatas diperoleh prediksi tidak _left_ terhadap prediksi benar tidak _left_ sebanyak 3381 sedangkan prediksi tidak _left_ terhadap prediksi benar _left_ sebesar 111 dan prediksi left terhadap benar tidak _left_ sebesar 17 sedangkan prediksi left terhadap benar left sebanyak 3348. Sehingga dari Tabel 4 diperoleh nilai akurasi, presisi, dan _recall_ sebagai berikut :
+
 Proses untuk mengetahui nilai akurasi dilakukan pada persamaan akurasi sebagai berikut :
-Akurasi = (TP+TN)/(TP+TN+FP+FN) 
+# Akurasi = (TP+TN)/(TP+TN+FP+FN) 
 =  (3348+3381)/(3348+3381+17+111)=0.98133 
 
 Sedangkan, pada proses perhitungan presisi dilakukan pada persamaan presisi sebagai berikut :
-Presisi = TP/(TP+FP)     
+# Presisi = TP/(TP+FP)     
 =  3348/(3348+17)=0.99498 
 
 Kemudian, untuk menghitung recall dilakukan pada persamaan _recall_ sebagai berikut :
-Recall = TP/(TP+FN) 
+# Recall = TP/(TP+FN) 
 =  3348/(3348+111)=0.96791 
 
 Setelah melakukan perhitungan performa model, diperoleh tingkat akurasi sebesar 98.13%, presisi sebesar 99.48% dan recall sebesar 96.79%. Sehingga prediksi pengunduran diri karyawan menggunakan confussion matrix dapat dikategorikan sebagai excellent classification (Koniyo & Sudarma, 2020)
