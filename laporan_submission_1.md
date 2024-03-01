@@ -12,12 +12,6 @@ Salah satu metode yang dapat digunakan untuk prediksi tersebut adalah menggunaka
 Berdasarkan permasalahan tersebut, maka akan dilakukan prediksi pengunduran diri karyawan menggunakan _Random Forest_ agar  perusahaan dapat mengambil langkah-langkah pencegahan yang tepat untuk meminimalisir pengunduran diri karyawan, mengurangi pengeluaran yang harus dikeluarkan dalam bentuk uang pesangon, serta menghindari kesulitan dalam mencari dan melatih ulang karyawan baru.
 
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-
-    
-
 ## Business Understanding
 ---
 
@@ -41,23 +35,21 @@ Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
 2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
 3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix dan Cross Validation
       
-
-
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. Langkah-langkah yang dilakukan pada tahapan ini adalah:
-Dataset yang digunakan diperoleh dari penyedia dataset online yaitu [kaggle](https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link)  yang terdiri dari 1499 record dan 11 atribut
+Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kaggle](https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link)  yang terdiri dari 1499 record dan 11 atribut
 
-|     No      |     Emp_Id      |     satisfaction_level    |     last_evaluation    |     ...    |     salary    |
-|-------------|-----------------|---------------------------|------------------------|------------|---------------|
-|     1.      |     IND02438    |     38%                   |     53%                |     ...    |     low       |
-|     2.      |     IND28133    |     80%                   |     86%                |     ...    |     medium    |
-|     3.      |     IND07164    |     11%                   |     88%                |     ...    |     medium    |
-|     4.      |     IND30478    |     72%                   |     87%                |     ...    |     low       |
-|     5.      |     IND24003    |     37%                   |     52%                |     ...    |     low       |
-|     ...     |     ...         |     ...                   |     ...                |     ...    |     ...       |
-|     1499    |     IND11649    |     37%                   |     52%                |     ...    |     low       |
+|     No     |     Emp_Id      |     satisfaction_level    |     last_evaluation    |     ...    |     salary    |
+|------------|-----------------|---------------------------|------------------------|------------|---------------|
+|     1.     |     IND02438    |     38%                   |     53%                |     ...    |     low       |
+|     2.     |     IND28133    |     80%                   |     86%                |     ...    |     medium    |
+|     3.     |     IND07164    |     11%                   |     88%                |     ...    |     medium    |
+|     4.     |     IND30478    |     72%                   |     87%                |     ...    |     low       |
+|     5.     |     IND24003    |     37%                   |     52%                |     ...    |     low       |
+|     ...    |     ...         |     ...                   |     ...                |     ...    |     ...       |
+|     14999  |     IND11649    |     37%                   |     52%                |     ...    |     low       |
 
-Pada Tabel diatas merupakan sampel dari total dataset sebanyak 1499 record dan 11 atribut. Berikut merupakan penjelasan untuk setiap atributnya :
+### Variabel-variabel pada _HR Employee_ dataset adalah sebagai berikut: 
 1. Emp_Id: Atribut ini adalah ID karyawan yang merupakan pengenal unik untuk setiap karyawan dalam dataset. ID ini digunakan untuk mengidentifikasi setiap entitas karyawan secara unik.
 2. satisfaction_level: Atribut ini menggambarkan tingkat kepuasan karyawan dalam bentuk persentase. Ini dapat mencerminkan kepuasan karyawan terhadap pekerjaan, lingkungan kerja, manajemen, dan faktor-faktor lainnya yang mempengaruhi kepuasan mereka.
 3. last_evaluation: Atribut ini mencerminkan penilaian terakhir karyawan dalam bentuk persentase. Hal ini dapat mencakup penilaian kinerja karyawan oleh atasan atau sistem evaluasi kinerja perusahaan.
@@ -70,15 +62,6 @@ Pada Tabel diatas merupakan sampel dari total dataset sebanyak 1499 record dan 1
 10. Department: Atribut ini menunjukkan departemen di mana karyawan bekerja. Contoh nilai departemen dalam dataset ini adalah "sales", yang menunjukkan karyawan bekerja di departemen penjualan.
 11. salary: Atribut ini menunjukkan tingkat gaji karyawan. Nilai gaji dalam contoh dataset ini adalah "low" (rendah) dan "medium" (sedang). Gaji dapat memberikan indikasi tentang tingkat kompensasi dan penghargaan karyawan.
 
-
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
-
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
