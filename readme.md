@@ -31,10 +31,8 @@ Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
 ## Solution statements
 Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
 1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
-   - Menangani_ missing value_ pada data
    - Melakukan transformasi data dengan mengubah data kategorikal menjadi data numerik
    - Melakukan _balancing_ data untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset
-   - Melakukan normalisasi pada data terutama pada fitur numerik
 2. Membuat model regresi untuk memprediksi pengunduran di karyawan menggunakan algoritma Random Forest.
 3. Melakukan evaluasi uji performa model menggunakan Confusion Matrix d
       
