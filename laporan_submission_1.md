@@ -13,15 +13,15 @@ Berdasarkan permasalahan tersebut, maka akan dilakukan penelitian prediksi pengu
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
 - Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
 1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
-- Menangani missing value pada data
-- Mencari korelasi pada data untuk mencari dependant variable dan independent variable
-- Menangani outlier pada data dengan menggunakan IQR Method
-- Melakukan normalisasi pada data terutama pada fitur numerik
+   - Menangani missing value pada data
+   - Mencari korelasi pada data untuk mencari dependant variable dan independent variable
+   - Menangani outlier pada data dengan menggunakan IQR Method
+   - Melakukan normalisasi pada data terutama pada fitur numerik
 2. Membuat model regresi untuk memprediksi bilangan kontinu untuk memprediksi harga yang akan datang. Berikut beberapa algoritma yang digunakan pada proyek ini :
-- Support Vector Machine (Support Vector Regression)
-- K-Nearest Neighbors
-- Boosting Algorithm (Gradient Boosting Regression)
-- Melakukan hyperparameter tuning agar model dapat berjalan pada performa terbaik dengan menggunakan teknik Grid Search
+   - Support Vector Machine (Support Vector Regression)
+   - K-Nearest Neighbors
+   - Boosting Algorithm (Gradient Boosting Regression)
+   - Melakukan hyperparameter tuning agar model dapat berjalan pada performa terbaik dengan menggunakan teknik Grid Search
     
 
 ## Business Understanding
