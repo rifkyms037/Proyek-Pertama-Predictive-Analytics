@@ -17,18 +17,18 @@ Berdasarkan permasalahan tersebut, maka akan dilakukan prediksi pengunduran diri
 
 _Business understanding_ bertujuan untuk menggali pengetahuan (_discovering   knowledge_) mengenai pemodelan aturan untuk memprediksi pengunduran diri karyawan apakah tergolong dalam klasifikasi mengundurkan diri atau tidak berdasarkan dataset yang dimiliki perusahaan.
 
-### Problem Statements
+## Problem Statements
 Berdasarkan masalah yang terpapar pada latar belakang, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
 - Bagaimana penerapan algoritma _Random Forest_ dalam prediksi pengunduran diri karyawan?
 - Bagaimana hasil evaluasi performa algoritma _Random Forest_ dengan menggunakan Confusion Matrix dan Cross Validation
 
-### Goals
+## Goals
 Berdasarkan masalah tersebut, tujuan dari proyek ini adalah :
 - Untuk memperoleh model klasifikasi Random Forest dalam memprediksi pengunduran diri karyawan
 - Untuk mengetahui evaluasi performa model  Random Forest menggunakan Confussion Matrix 
 
 
-### Solution statements
+## Solution statements
 Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
 1. Melakukan analisa, eksplorasi, pemrosesan pada data dengan memvisualisasikan data agar mendapat gambaran bagaimana data tersebut. Berikut adalah analisa yang dapat dilakukan :
    - Menangani_ missing value_ pada data
@@ -52,7 +52,7 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 |     ...    |     ...         |     ...                   |     ...                |     ...    |     ...       |
 |     14999  |     IND11649    |     37%                   |     52%                |     ...    |     low       |
 
-### Variabel-variabel pada _HR Employee_ dataset adalah sebagai berikut: 
+## Variabel-variabel pada _HR Employee_ dataset adalah sebagai berikut: 
 1. **Emp_Id**: Atribut ini adalah ID karyawan yang merupakan pengenal unik untuk setiap karyawan dalam dataset. ID ini digunakan untuk mengidentifikasi setiap entitas karyawan secara unik.
 2.** satisfaction_level**: Atribut ini menggambarkan tingkat kepuasan karyawan dalam bentuk persentase. Ini dapat mencerminkan kepuasan karyawan terhadap pekerjaan, lingkungan kerja, manajemen, dan faktor-faktor lainnya yang mempengaruhi kepuasan mereka.
 3. **last_evaluation**: Atribut ini mencerminkan penilaian terakhir karyawan dalam bentuk persentase. Hal ini dapat mencakup penilaian kinerja karyawan oleh atasan atau sistem evaluasi kinerja perusahaan.
@@ -66,25 +66,25 @@ Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kag
 11. **salary**: Atribut ini menunjukkan tingkat gaji karyawan. Nilai gaji dalam contoh dataset ini adalah "low" (rendah) dan "medium" (sedang). Gaji dapat memberikan indikasi tentang tingkat kompensasi dan penghargaan karyawan.
 
 
-### Exploratory Data Analysis:
+## Exploratory Data Analysis:
 Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna memahami karakteristik data
 
-* Tingkat kepuasan rata-rata untuk setiap departemen
-   
-![](Proyek-Pertama-Predictive-Analytics/assets/images/gaji.jpg)
-
+1. Tingkat kepuasan rata-rata untuk setiap departemen
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/gaji.png" width="350"/></div>
 Gambar diatas merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
 
 Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan rata-rata karyawan di berbagai departemen dalam sebuah perusahaan, sehingga bisa membantu profesional sumber daya manusia atau manajer untuk mengidentifikasi tingkat kepuasan tiap departemen 
 
-* Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
-/assets/images/Pengaruh jumlah proyek.png
+2. Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/Pengaruh%20jumlah%20proyek.png" width="350"/></div>
+
 Gambar diatas merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
-* Korelasi Tiap Variabel
-/assets/images/heatmap.png
+4. Korelasi Tiap Variabel
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/heatmap.png" width="350"/></div>
+
 Berdasarkan gambar tersebut, interpretasinya yaitu :
 * Korelasi antara satisfaction_level dengan variabel lain:
   - Korelasi negatif yang sedang dengan _left_ (-0.388375) yang menunjukkan bahwa semakin rendah tingkat kepuasan karyawan (_satisfaction_level_), semakin tinggi kemungkinan mereka akan meninggalkan perusahaan (_left_).
@@ -104,7 +104,14 @@ Berdasarkan gambar tersebut, interpretasinya yaitu :
 
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (Data Preparation). Berikut langkah-langkah yang harus dilakukan pada data preparation :
+**Data _Transformation_**
+Data transformation, adalah pengubahan format menjadi bentuk yang lebih sesuai proses data mining. Berikut merupakan proses transformasi data yang dilakukan :
+**Data _Balancing_**
+Data balancing, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (Synthetic Minority Over-sampling Technique) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
+![](Proyek-Pertama-Predictive-Analytics/assets/images/imbalanced.png)
+Berdasarkan Gambar 4, terdapat imbalance data pada atribut target yaitu left, dimana  terdapat imbalance pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python. Berikut hasil dari balancing yang telah dilakukan :
+![](Proyek-Pertama-Predictive-Analytics/assets/images/balanced.png)
 
 **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
