@@ -128,10 +128,11 @@ Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, 
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
 Keterangan :
 
-1. _True Positive _(TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
+1. _True Positive_ (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
 2. _True Negative_ (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
 3. _False Positive_ (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
 4. _False Negative_ (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
+
 Dari _confusion matrix_, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
 
 1. Akurasi
