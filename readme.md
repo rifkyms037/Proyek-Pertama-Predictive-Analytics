@@ -132,7 +132,7 @@ Keterangan :
 3. **_False Positive_* (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
 4. **_False Negative_** (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
 Dari _confusion matrix_, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
-### Akurasi
+1. Akurasi
 Akurasi adalah sebuah metrik evaluasi yang menghitung seberapa banyak prediksi yang benar dari seluruh prediksi yang dilakukan oleh sebuah model.  
 Dengan rumus :
 Akurasi = (TP + TN) / (TP + TN + FP + FN)
@@ -141,13 +141,13 @@ TP = _True Positive_.
 TN = _True Negative_.
 FP = _False Positive_.
 FN = _False Negative_.
-### Presisi
+2. Presisi
 Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model. Dengan rumus :
 Presisi=  TP/(TP+FP)                                                                                                   
 Keterangan: 
 TP = _True Positive_.
 FP = _False Positive_.
-### _Recall_
+3. _Recall_
 _Recall_ adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
 _Recall_ =  TP/(TP+FN)                                                                                                 
 Keterangan:
@@ -163,15 +163,15 @@ Berikut merupakan nilai confussion matrix yang diperoleh :
 Berdasarkan Tabel diatas diperoleh prediksi tidak _left_ terhadap prediksi benar tidak _left_ sebanyak 3381 sedangkan prediksi tidak _left_ terhadap prediksi benar _left_ sebesar 111 dan prediksi left terhadap benar tidak _left_ sebesar 17 sedangkan prediksi left terhadap benar left sebanyak 3348. Sehingga dari Tabel 4 diperoleh nilai akurasi, presisi, dan _recall_ sebagai berikut :
 
 Proses untuk mengetahui nilai akurasi dilakukan pada persamaan akurasi sebagai berikut :
-Akurasi = (TP+TN)/(TP+TN+FP+FN) 
+- Akurasi = (TP+TN)/(TP+TN+FP+FN) 
 =  (3348+3381)/(3348+3381+17+111)=0.98133 
 
 Sedangkan, pada proses perhitungan presisi dilakukan pada persamaan presisi sebagai berikut :
-Presisi = TP/(TP+FP)     
+- Presisi = TP/(TP+FP)     
 =  3348/(3348+17)=0.99498 
 
 Kemudian, untuk menghitung recall dilakukan pada persamaan _recall_ sebagai berikut :
-Recall = TP/(TP+FN) 
+- Recall = $$ TP = {TP \over TP+FN } $$ 
 =  3348/(3348+111)=0.96791 
 
 Setelah melakukan perhitungan performa model, diperoleh tingkat akurasi sebesar 98.13%, presisi sebesar 99.48% dan recall sebesar 96.79%. Sehingga prediksi pengunduran diri karyawan menggunakan confussion matrix dapat dikategorikan sebagai excellent classification (Koniyo & Sudarma, 2020)
