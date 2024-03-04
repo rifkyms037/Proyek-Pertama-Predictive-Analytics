@@ -105,7 +105,7 @@ Berdasarkan gambar tersebut, interpretasinya yaitu :
 Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (_Data Preparation_). Berikut langkah-langkah yang harus dilakukan pada data _preparation_ :
 ### **Data _Transformation_**
 Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses _data mining_. Berikut merupakan proses transformasi data yang dilakukan :
-<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.png" width="300"/></div>
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.jpeg" width="300"/></div>
 Berdasarkan Gambar diatas, proses transformasi data dilakukan pada atribut salary, dan departement dengan mengubah data kategorikal menjadi data numerik. Proses transformasi data dilakukan juga pada atribut satisfication_level, seperti mengubah isi baris 38% menjadi 0.38 dan seterusnya.
 
 ### **Data _Balancing_**
