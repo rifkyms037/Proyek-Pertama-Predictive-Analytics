@@ -127,11 +127,13 @@ Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang di
 Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode_ classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
 Keterangan :
-1. True Positive (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
-2. True Negative (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
-3. False Positive (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
-4. False Negative (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
+
+1. _True Positive _(TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
+2. _True Negative_ (TN) adalah jumlah sampel negatif yang berhasil diklasifikasikan dengan benar sebagai negatif oleh model klasifikasi.
+3. _False Positive_ (FP) adalah jumlah sampel negatif yang salah diklasifikasikan sebagai positif oleh model klasifikasi.
+4. _False Negative_ (FN) adalah jumlah sampel positif yang salah diklasifikasikan sebagai negatif oleh model klasifikasi.
 Dari _confusion matrix_, selanjutnya dapat menghitung beberapa metrik evaluasi yang berguna untuk mengukur kinerja suatu model klasifikasi. Berikut adalah beberapa metrik evaluasi yang dapat dihitung dari _confusion matrix_:
+
 1. Akurasi
 Akurasi adalah sebuah metrik evaluasi yang menghitung seberapa banyak prediksi yang benar dari seluruh prediksi yang dilakukan oleh sebuah model.  
 Dengan rumus :
