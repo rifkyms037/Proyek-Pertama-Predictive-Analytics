@@ -111,9 +111,11 @@ Berdasarkan Gambar diatas, proses transformasi data dilakukan pada atribut salar
 ### **Data _Balancing_**
 _Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
-Berdasarkan Gambar 4, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman _python._ Berikut hasil dari _data balancing_ yang telah dilakukan :
+Berdasarkan Gambar diatas, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python
+
+Berikut hasil dari _data balancing_ yang telah dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/balanced.png" width="500"/></div>
-Proses _balancing data_ telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
+Proses _Data balancing_ data telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
 
 
 ## Modeling
@@ -124,7 +126,7 @@ Cara kerja dari Random Forest terdiri dari dua fase utama. Fase pertama yaitu me
 Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang digunakan sebagai input dan variabel Y sebagai target yaitu mengundurkan diri atau tidak mengundurkan diri. Kemudian dilakukan pembagian dataset menjadi data training dan data testing dengan rasio sebesar 70%:30% dari jumlah dataset sebanyak 1499 data. Selanjutnya melakukan penyetelan parameter Random Forest untuk mencapai kinerja yang optimal, beberapa parameter yang digunakan pada penelitian ini adalah n_estimator sebanyak 10 pohon untuk mengontrol jumlah pohon yang dibangun  dan random state sebanyak 19. Setelah proses pengembangan model Random Forest dan penyetelan parameter dilakukan, selanjutnya dilakukan evaluasi uji performa untuk mengukur kinerja  suatu model.
 
 ## Evaluation
-Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode_ classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
+Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode _classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
 Keterangan :
 
@@ -186,10 +188,10 @@ Kemudian, untuk menghitung recall dilakukan pada persamaan _recall_ sebagai beri
 
 Setelah melakukan perhitungan performa model, diperoleh tingkat akurasi sebesar 98.13%, presisi sebesar 99.48% dan recall sebesar 96.79%. Sehingga prediksi pengunduran diri karyawan menggunakan confussion matrix dapat dikategorikan sebagai excellent classification (Koniyo & Sudarma, 2020)
 
+Referensi
 
+Koniyo, M. H., & Sudarma, M. (2020). Comparison of Data Mining Classification Algorithm Performance for Data Prediction Type of Social Assistance Distribution. Conrist 2019, 336–342. https://doi.org/10.5220/0009910003360342
+  
+Normah, Rifai, B., Vambudi, S., & Maulana, R. (2022). Analisa Sentimen Perkembangan Vtuber Dengan Metode Support Vector Machine Berbasis SMOTE. Jurnal Teknik Komputer AMIK BSI, 8(2), 174–180. https://doi.org/10.31294/jtk.v4i2
 
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Pangkey, M. (2012). Analisis Faktor-Faktor Penyebab Pengunduran Diri Karyawan Waktu Tertentu Pada PT. Sinar Pure Foods International. Jurnal Ilmu Administrasi, 8(3), 1–10.
