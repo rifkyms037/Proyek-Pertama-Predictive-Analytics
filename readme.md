@@ -138,9 +138,7 @@ Dari _confusion matrix_, selanjutnya dapat menghitung beberapa metrik evaluasi y
 1. Akurasi
 Akurasi adalah sebuah metrik evaluasi yang menghitung seberapa banyak prediksi yang benar dari seluruh prediksi yang dilakukan oleh sebuah model.  
 Dengan rumus :
-
 Akurasi = (TP + TN) / (TP + TN + FP + FN)
-
 Keterangan :
 TP = _True Positive_.
 TN = _True Negative_.
@@ -150,9 +148,7 @@ FN = _False Negative_.
 2. Presisi
 Presisi adalah metrik evaluasi yang menghitung seberapa banyak prediksi positif yang benar dari seluruh prediksi positif yang dilakukan oleh sebuah model.
 Dengan rumus :
-
 Presisi =  TP/(TP+FP)                                                                                                   
-
 Keterangan: 
 TP = _True Positive_.
 FP = _False Positive_.
@@ -160,9 +156,7 @@ FP = _False Positive_.
 3. _Recall_
 _Recall_ adalah metrik evaluasi yang digunakan untuk mengukur kemampuan suatu model klasifikasi dalam mengidentifikasi secara benar semua sampel positif yang ada.
 Dengan rumus:
-
 _Recall_ =  TP/(TP+FN)                                                                                                 
-
 Keterangan:
 TP = _True Positive_.
 FN = _False Negative_.
