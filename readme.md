@@ -72,7 +72,7 @@ Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna me
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/gaji.png" width="500"/></div>
 Gambar 1. Diagram Batang tingkat kepuasan rata-rata untuk setiap departemen
 
-Berdasarkan Gambar 1.  merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
+Berdasarkan Gambar 1,  merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
 
@@ -82,7 +82,7 @@ Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan 
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/Pengaruh%20jumlah%20proyek.png" width="500"/></div>
 Gambar 2. Diagram garis  Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
 
-Berdasarkan Gambar 2. merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
+Berdasarkan Gambar 2 merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
 4. Korelasi Tiap Variabel
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/heatmap.png" width="500"/></div>
@@ -114,14 +114,14 @@ _Data Cleaning_ adalah proses pembersihan data untuk memperbaiki kualitas data s
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/missingvalue.png" width="300"/></div>
 Gambar 4. Cek Missing Value
 
-Setelah melakukan pengecekan pada missing value, ternyata tidak terdapat nilai yang kosong pada dataset, sehingga dapat melakukan tahap data preprocessing selanjutnya.
+Setelah melakukan pengecekan pada missing value, ternyata tidak terdapat nilai yang kosong pada dataset, sehingga dapat melakukan tahap data preparation selanjutnya.
 
 ### **Informasi tentang Dataset**
 
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/info.png" width="300"/></div>
 Gambar 5. Informasi dataset
 
-Berdasarkan Gambar 5, tipe data objek untuk kolom "satisfaction_level", "last_evaluation", "Department", dan "salary" perlu diubah menjadi tipe data yang sesuai untuk analisis lebih lanjut. Transformasi ini diperlukan agar data dapat diproses dengan benar. Sebagai contoh, kolom "satisfaction_level" dan "last_evaluation"  berisi angka desimal yang mewakili tingkat kepuasan dan evaluasi, sehingga perlu diubah menjadi tipe data float. Sementara kolom "Department" dan "salary"  berisi kategori, sehingga perlu diubah menjadi tipe data kategorikal. Dengan melakukan transformasi ini, data akan siap untuk analisis lebih lanjut dan pengembangan model prediktif yang akurat.
+Berdasarkan Gambar 5, tipe data objek untuk kolom "satisfaction_level", "last_evaluation", "Department", dan "salary" perlu diubah menjadi tipe data yang sesuai untuk analisis lebih lanjut. Transformasi ini diperlukan agar data dapat diproses dengan benar. Sebagai contoh, kolom "satisfaction_level" dan "last_evaluation"  berisi angka desimal yang mewakili tingkat kepuasan dan evaluasi, sehingga perlu diubah menjadi tipe data float. Sementara kolom "Department" dan "salary"  berisi kategori, sehingga perlu diubah menjadi tipe data kategorikal. Dengan melakukan transformasi ini, data akan siap untuk analisis lebih lanjut dan pengembangan model prediktif Random Forest.
 
 ### **Data _Transformation_**
 Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses permodelan. Berikut merupakan proses transformasi data yang dilakukan :
@@ -133,13 +133,13 @@ Berdasarkan Gambar 6, proses transformasi data dilakukan pada atribut salary, da
 ### **Data _Balancing_**
 _Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
-Gambar 7. _Inbalance Data_
+Gambar 7. Imbalance Data
 
 Berdasarkan Gambar 7, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python
 
 Berikut hasil dari _data balancing_ yang telah dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/balanced.png" width="500"/></div>
-Gambar 8. _Balancing_ Data
+Gambar 8. Balancing Data
 
 Berdasarkan Gambar 8, proses _Data balancing_ data telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
 
@@ -180,7 +180,7 @@ Untuk hyperparameter yang digunakan pada model ini hanya yaitu :
 1. n_estimators: Hyperparameter ini menentukan jumlah pohon keputusan yang akan dibangun dalam ensemble. Dalam kasus ini, n_estimators diatur ke 10, yang berarti akan ada 10 pohon keputusan dalam model.
 2. random_state: Parameter ini digunakan untuk mengatur seed yang akan digunakan oleh generator nomor acak. Ini memastikan bahwa hasil yang dihasilkan akan konsisten setiap kali kode dijalankan.
 
-Selanjutnya melakukan penyetelan parameter Random Forest untuk mencapai kinerja yang optimal, beberapa parameter yang digunakan pada proyek ini adalah n_estimator sebanyak 10 pohon untuk mengontrol jumlah pohon yang dibangun  dan random state sebanyak 19. Setelah proses pengembangan model Random Forest dan penyetelan parameter dilakukan, selanjutnya dilakukan evaluasi uji performa untuk mengukur kinerja suatu model.
+Setelah proses pengembangan model Random Forest dan penyetelan hyperparameter dilakukan, selanjutnya dilakukan evaluasi uji performa untuk mengukur kinerja suatu model.
 
 ## Evaluation
 Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode _classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
