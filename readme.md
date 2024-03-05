@@ -38,8 +38,8 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
       
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. 
-Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kaggle](https://docs.google.com/spreadsheets/d/111VK34hBgbLqy4kHpPUhvudcfSksUopz/edit?usp=drive_link)  yang terdiri dari 14993 record dan 11 atribut
-
+Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kaggle](https://www.kaggle.com/datasets/kmldas/hr-employee-data-descriptive-analytics)  yang terdiri dari  14999 record dan 11 atribut
+Tabel 1. Dataset Mentah
 |     No     |     Emp_Id      |     satisfaction_level    |     last_evaluation    |     ...    |     salary    |
 |------------|-----------------|---------------------------|------------------------|------------|---------------|
 |     1.     |     IND02438    |     38%                   |     53%                |     ...    |     low       |
@@ -69,7 +69,8 @@ Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna me
 
 1. Tingkat kepuasan rata-rata untuk setiap departemen
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/gaji.png" width="500"/></div>
-Gambar diatas merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
+Gambar 1. Diagram Batang tingkat kepuasan rata-rata untuk setiap departemen
+Berdasarkan Gambar 1.  merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
 
@@ -77,11 +78,12 @@ Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan 
 
 2. Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/Pengaruh%20jumlah%20proyek.png" width="500"/></div>
-
-Gambar diatas merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
+Gambar 2. Diagram garis  Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
+Berdasarkan Gambar 2. merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
 4. Korelasi Tiap Variabel
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/heatmap.png" width="500"/></div>
+Gambar 3. Heatmap korelasi antar variabel
 
 Berdasarkan gambar tersebut, interpretasinya yaitu :
 * Korelasi antara satisfaction_level dengan variabel lain:
@@ -106,28 +108,61 @@ Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan D
 ### **Data _Transformation_**
 Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses _data mining_. Berikut merupakan proses transformasi data yang dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.jpeg" width="300"/></div>
+Gambar 4. Proses Transformasi Data
 Berdasarkan Gambar diatas, proses transformasi data dilakukan pada atribut salary, dan departement dengan mengubah data kategorikal menjadi data numerik. Proses transformasi data dilakukan juga pada atribut satisfication_level, seperti mengubah isi baris 38% menjadi 0.38 dan seterusnya.
 
 ### **Data _Balancing_**
 _Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
-Berdasarkan Gambar diatas, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python
+Gambar 5. _Inbalance Data_
+Berdasarkan Gambar 5., terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python
 
 Berikut hasil dari _data balancing_ yang telah dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/balanced.png" width="500"/></div>
+Gambar 6. _Balancing_ Data
 Proses _Data balancing_ data telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
 
 
 ## Modeling
-Setelah melakukan beberapa proses sebelumnya, sehingga data siap untuk diproses, tahap selanjutnya yaitu melakukan proses modelling dengan tujuan untuk mengembangkan model prediktif yang dapat digunakan untuk melakukan analisis lebih lanjut dan membuat prediksi pengunduran diri karyawan. Teknik permodelan yang akan digunakan pada penelitian ini adalah algoritma Random Forest. Random Forest adalah  adalah algoritma machine learning yang terdiri dari banyak pohon keputusan yang dibuat melalui proses bagging atau bootstrap aggregating (Normah et al., 2022), lalu digabungkan untuk menghasilkan hasil akhir. Bagging atau bootstrap aggregating adalah teknik pembentukan model dengan membangun banyak model keputusan pada sampel data yang berbeda-beda dan akhirnya menggabungkan hasil prediksi dari model-model tersebut. Dengan demikian, Random Forest dapat menghasilkan prediksi yang lebih akurat dan tahan terhadap overfitting. 
-Cara kerja dari Random Forest terdiri dari dua fase utama. Fase pertama yaitu menggabungkan jumlah N pohon keputusan dengan melibatkan pembuatan dari algoritma Random Forest, setelah pohon keputusan dari sejumlah N yang terbentuk, selanjutnya dilanjutkan pada fase kedua, yaitu membuat prediksi dari setiap decision tree yang telah dibuat pada fase pertama.
-<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/RF.png" width="500"/></div>
+Setelah melakukan beberapa proses sebelumnya, sehingga data siap untuk diproses, tahap selanjutnya yaitu melakukan proses modelling dengan tujuan untuk mengembangkan model prediktif yang dapat digunakan untuk melakukan analisis lebih lanjut dan membuat prediksi pengunduran diri karyawan. Teknik permodelan yang akan digunakan pada proyek ini adalah algoritma Random Forest. Random Forest adalah  adalah algoritma machine learning yang terdiri dari banyak pohon keputusan yang dibuat melalui proses bagging atau bootstrap aggregating (Normah et al., 2022), lalu digabungkan untuk menghasilkan hasil akhir. Bagging atau bootstrap aggregating adalah teknik pembentukan model dengan membangun banyak model keputusan pada sampel data yang berbeda-beda dan akhirnya menggabungkan hasil prediksi dari model-model tersebut. Dengan demikian, Random Forest dapat menghasilkan prediksi yang lebih akurat dan tahan terhadap overfitting. Cara kerja dari Random Forest terdiri dari dua fase utama. Fase pertama yaitu menggabungkan jumlah N pohon keputusan dengan melibatkan pembuatan dari algoritma Random Forest, setelah pohon keputusan dari sejumlah N yang terbentuk, selanjutnya dilanjutkan pada fase kedua, yaitu membuat prediksi dari setiap decision tree yang telah dibuat pada fase pertama.
 
-Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang digunakan sebagai input dan variabel Y sebagai target yaitu mengundurkan diri atau tidak mengundurkan diri. Kemudian dilakukan pembagian dataset menjadi data training dan data testing dengan rasio sebesar 70%:30% dari jumlah dataset sebanyak 1499 data. Selanjutnya melakukan penyetelan parameter Random Forest untuk mencapai kinerja yang optimal, beberapa parameter yang digunakan pada penelitian ini adalah n_estimator sebanyak 10 pohon untuk mengontrol jumlah pohon yang dibangun  dan random state sebanyak 19. Setelah proses pengembangan model Random Forest dan penyetelan parameter dilakukan, selanjutnya dilakukan evaluasi uji performa untuk mengukur kinerja  suatu model.
+Pemilihan algoritma Random Forest terhadap prediksi pengunduran diri karyawan yaitu:
+1. Akurasi Tinggi: Model ini menghasilkan prediksi yang akurat dengan menggabungkan banyak pohon keputusan.
+2. Toleransi terhadap Overfitting: Teknik bagging mengurangi risiko overfitting, membuat prediksi lebih andal.
+3. Stabilitas terhadap Perubahan Data: Model ini stabil terhadap fluktuasi data, memberikan hasil yang konsisten.
+4. Skalabilitas: Mampu menangani dataset besar dengan mudah.
+4. Kemampuan Menangani Fitur yang Bermacam-macam: Cocok untuk dataset dengan berbagai jenis variabel, termasuk kategorikal dan numerikal.
+Dengan kelebihan ini, Random Forest adalah pilihan tepat untuk memprediksi pengunduran diri karyawan dengan dataset sebanyak 14999.
+
+- Kelebihan:
+
+1. Kinerja Tinggi: Akurat dan efektif, bahkan dengan dataset besar.
+2. Tahan Overfitting: Menggunakan banyak pohon, sehingga lebih tahan terhadap overfitting.
+3. Stabilitas: Stabil terhadap perubahan data, noise, dan outlier.
+4. Skalabilitas: Dapat diparalelkan untuk data besar.
+5. Menangani Ketidakseimbangan: Berfungsi baik dengan dataset tidak seimbang.
+
+- Kekurangan:
+
+1. Kompleksitas: Sulit diinterpretasi karena banyaknya pohon.
+2. Waktu Pelatihan: Memakan waktu untuk pelatihan pada dataset besar.
+3. Memori: Memerlukan banyak ruang memori.
+4. Prediksi Lambat: Lebih lambat daripada model sederhana.
+5. Bias terhadap Kelas Mayoritas: Cenderung memilih kelas mayoritas, menyebabkan bias
+
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/RF.png" width="500"/></div>
+Gambar 7. Alur Kerja _Random Forest_
+Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang digunakan sebagai input dan variabel Y sebagai target yaitu mengundurkan diri atau tidak mengundurkan diri. Kemudian dilakukan pembagian dataset menjadi data training dan data testing dengan rasio sebesar 70%:30% dari jumlah dataset sebanyak 14999 data. 
+Untuk hyperparameter yang digunakan pada model ini hanya yaitu :
+1. n_estimators: Hyperparameter ini menentukan jumlah pohon keputusan yang akan dibangun dalam ensemble. Dalam kasus ini, n_estimators diatur ke 10, yang berarti akan ada 10 pohon keputusan dalam model.
+2. random_state: Parameter ini digunakan untuk mengatur seed yang akan digunakan oleh generator nomor acak. Ini memastikan bahwa hasil yang dihasilkan akan konsisten setiap kali kode dijalankan.
+
+Selanjutnya melakukan penyetelan parameter Random Forest untuk mencapai kinerja yang optimal, beberapa parameter yang digunakan pada proyek ini adalah n_estimator sebanyak 10 pohon untuk mengontrol jumlah pohon yang dibangun  dan random state sebanyak 19. Setelah proses pengembangan model Random Forest dan penyetelan parameter dilakukan, selanjutnya dilakukan evaluasi uji performa untuk mengukur kinerja suatu model.
 
 ## Evaluation
 Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode _classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
+Gambar 8. _Confussion Matrix_
 Keterangan :
 
 1. _True Positive_ (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
@@ -164,12 +199,13 @@ Keterangan:
 - FN = False Negative
 
 Berikut merupakan nilai confussion matrix yang diperoleh :
+Tabel 2. Evaluasi Performa Model
 |                     |     Predicted Not Left    |     Predicted Left    |
 |---------------------|---------------------------|-----------------------|
 |     True No Left    |     3381                  |     17                |
 |     True Left       |     111                   |     3348              |
 
-Berdasarkan Tabel diatas diperoleh prediksi tidak _left_ terhadap prediksi benar tidak _left_ sebanyak 3381 sedangkan prediksi tidak _left_ terhadap prediksi benar _left_ sebesar 111 dan prediksi left terhadap benar tidak _left_ sebesar 17 sedangkan prediksi left terhadap benar left sebanyak 3348. Sehingga dari Tabel 4 diperoleh nilai akurasi, presisi, dan _recall_ sebagai berikut :
+Berdasarkan Tabel 2. diperoleh prediksi tidak _left_ terhadap prediksi benar tidak _left_ sebanyak 3381 sedangkan prediksi tidak _left_ terhadap prediksi benar _left_ sebesar 111 dan prediksi left terhadap benar tidak _left_ sebesar 17 sedangkan prediksi left terhadap benar left sebanyak 3348. Sehingga dari Tabel 2. diperoleh nilai akurasi, presisi, dan _recall_ sebagai berikut :
 
 Proses untuk mengetahui nilai akurasi dilakukan pada persamaan akurasi sebagai berikut :
 - Akurasi = (TP+TN)/(TP+TN+FP+FN) 
