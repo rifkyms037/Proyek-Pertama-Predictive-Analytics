@@ -39,6 +39,7 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
 ## Data Understanding
 Dalam tahapan ini, berfokus pada pemahaman tentang data yang digunakan dalam proyek analisis atau prediksi pengunduran diri karyawan. 
 Dataset yang digunakan diperoleh dari penyedia dataset online yaitu website [kaggle](https://www.kaggle.com/datasets/kmldas/hr-employee-data-descriptive-analytics)  yang terdiri dari  14999 record dan 11 atribut
+
 Tabel 1. Dataset Mentah
 |     No     |     Emp_Id      |     satisfaction_level    |     last_evaluation    |     ...    |     salary    |
 |------------|-----------------|---------------------------|------------------------|------------|---------------|
@@ -70,6 +71,7 @@ Sebelum memulai pemrosesan data, baiknya untuk melakukan eksplorasi data guna me
 1. Tingkat kepuasan rata-rata untuk setiap departemen
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/gaji.png" width="500"/></div>
 Gambar 1. Diagram Batang tingkat kepuasan rata-rata untuk setiap departemen
+
 Berdasarkan Gambar 1.  merupakan diagram batang yang memvisualisasikan tingkat kepuasan rata-rata untuk setiap departemen. Sumbu-x menampilkan departemen, dan sumbu-y menampilkan tingkat kepuasan rata-rata. Tinggi setiap batang sesuai dengan tingkat kepuasan rata-rata untuk departemen tersebut.
 
 Sebagai contoh, departemen dengan tingkat kepuasan rata-rata tertinggi  adalah departemen nomor 6 yaitu _management_, sementara departemen dengan tingkat kepuasan rata-rata terendah  adalah departemen nomor 2 yaitu _accounting_.
@@ -79,13 +81,14 @@ Secara keseluruhan, gambar tersebut memberikan wawasan tentang tingkat kepuasan 
 2. Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/Pengaruh%20jumlah%20proyek.png" width="500"/></div>
 Gambar 2. Diagram garis  Pengaruh jumlah proyek terhadap jumlah jam kerja rata-rata per bulan
+
 Berdasarkan Gambar 2. merupakan diagram garis yang memvisualisasikan jumlah proyek terhadap jumlah jam kerja rata-rata per bulan. Dalam gambar tersebut menunjukkan semakin tinggi jumlah projek semakin banyak jumlah jam kerja rata-rata per bulan.
 
 4. Korelasi Tiap Variabel
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/heatmap.png" width="500"/></div>
 Gambar 3. Heatmap korelasi antar variabel
 
-Berdasarkan gambar tersebut, interpretasinya yaitu :
+Berdasarkan Gambar 3, interpretasinya yaitu :
 * Korelasi antara satisfaction_level dengan variabel lain:
   - Korelasi negatif yang sedang dengan _left_ (-0.388375) yang menunjukkan bahwa semakin rendah tingkat kepuasan karyawan (_satisfaction_level_), semakin tinggi kemungkinan mereka akan meninggalkan perusahaan (_left_).
   - Korelasi positif yang lemah dengan _last_evaluation_ (0.105021) yang menunjukkan bahwa ada hubungan positif lemah antara tingkat kepuasan dan hasil evaluasi terakhir.
@@ -104,23 +107,41 @@ Berdasarkan gambar tersebut, interpretasinya yaitu :
 
 
 ## Data Preparation
-Data mentah yang diperoleh pada tahap sebelumnya perlu melalui tahap Persiapan Data (_Data Preparation_). Berikut langkah-langkah yang harus dilakukan pada data _preparation_ :
+Data mentah yang telah diperoleh dari kaggle harus melakukan data preparation terlebih dahulu dengan tujuan agar data mentah tersebut dapat digunakan ke tahap selanjutnya yaitu permodelan dengan Random Forest. Dengan melakukan data preparation secara tepat, sehingga dapat memastikan bahwa data yang digunakan untuk analisis dan pengembangan model prediktif sudah bersih, relevan, dan siap untuk digunakan. Proses yang harus dilakukan pada data preparation adalah :
+
+### **_Data Cleaning_**
+_Data Cleaning_ adalah proses pembersihan data untuk memperbaiki kualitas data sehingga dapat diandalkan dan relevan
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/missingvalue.png" width="300"/></div>
+Gambar 4. Cek Missing Value
+
+Setelah melakukan pengecekan pada missing value, ternyata tidak terdapat nilai yang kosong pada dataset, sehingga dapat melakukan tahap data preprocessing selanjutnya.
+
+### **Informasi tentang Dataset**
+
+<div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/info.png" width="300"/></div>
+Gambar 5. Informasi dataset
+
+Berdasarkan Gambar 5, tipe data objek untuk kolom "satisfaction_level", "last_evaluation", "Department", dan "salary" perlu diubah menjadi tipe data yang sesuai untuk analisis lebih lanjut. Transformasi ini diperlukan agar data dapat diproses dengan benar. Sebagai contoh, kolom "satisfaction_level" dan "last_evaluation"  berisi angka desimal yang mewakili tingkat kepuasan dan evaluasi, sehingga perlu diubah menjadi tipe data float. Sementara kolom "Department" dan "salary"  berisi kategori, sehingga perlu diubah menjadi tipe data kategorikal. Dengan melakukan transformasi ini, data akan siap untuk analisis lebih lanjut dan pengembangan model prediktif yang akurat.
+
 ### **Data _Transformation_**
-Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses _data mining_. Berikut merupakan proses transformasi data yang dilakukan :
+Data _transformation_, adalah pengubahan format menjadi bentuk yang lebih sesuai proses permodelan. Berikut merupakan proses transformasi data yang dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/transformasi.jpeg" width="300"/></div>
-Gambar 4. Proses Transformasi Data
-Berdasarkan Gambar diatas, proses transformasi data dilakukan pada atribut salary, dan departement dengan mengubah data kategorikal menjadi data numerik. Proses transformasi data dilakukan juga pada atribut satisfication_level, seperti mengubah isi baris 38% menjadi 0.38 dan seterusnya.
+Gambar 6. Proses Transformasi Data
+
+Berdasarkan Gambar 6, proses transformasi data dilakukan pada atribut salary, dan departement dengan mengubah data kategorikal menjadi data numerik. Proses transformasi data dilakukan juga pada atribut satisfication_level, seperti mengubah isi baris 38% menjadi 0.38 dan seterusnya.
 
 ### **Data _Balancing_**
 _Data balancing_, adalah proses memanipulasi dataset untuk mengatasi ketidakseimbangan antara kelas atau target variabel yang ada dalam dataset. Metode digunakan untuk mengatasi imbalance data yaitu SMOTE  (_Synthetic Minority Over-sampling Technique_) dengan penambahan lebih banyak sampel pada kelas minoritas untuk menyamakan jumlah sampel dengan kelas mayoritas.
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/imbalanced.png" width="500"/></div>
-Gambar 5. _Inbalance Data_
-Berdasarkan Gambar 5., terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python
+Gambar 7. _Inbalance Data_
+
+Berdasarkan Gambar 7, terdapat _imbalance data_ pada atribut target yaitu _left_, dimana  terdapat _imbalance_ pada kelas 0 tidak mengundurkan diri sebanyak 11.428 dan kelas 1 pengunduran diri sebanyak 3571, maka selanjutnya akan melakukan sampling data pada kelas 1 menyesuaikan dengan jumlah kelas 0 menggunakan teknik SMOTE menggunakan pemrograman python
 
 Berikut hasil dari _data balancing_ yang telah dilakukan :
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/balanced.png" width="500"/></div>
-Gambar 6. _Balancing_ Data
-Proses _Data balancing_ data telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
+Gambar 8. _Balancing_ Data
+
+Berdasarkan Gambar 8, proses _Data balancing_ data telah berhasil dilakukan, sehingga kelas 0 dan kelas 1 sudah seimbang, sehingga setelah melakukan proses diatas bisa dilanjut ke tahap berikutnya yaitu tahap modelling.
 
 
 ## Modeling
@@ -132,6 +153,7 @@ Pemilihan algoritma Random Forest terhadap prediksi pengunduran diri karyawan ya
 3. Stabilitas terhadap Perubahan Data: Model ini stabil terhadap fluktuasi data, memberikan hasil yang konsisten.
 4. Skalabilitas: Mampu menangani dataset besar dengan mudah.
 4. Kemampuan Menangani Fitur yang Bermacam-macam: Cocok untuk dataset dengan berbagai jenis variabel, termasuk kategorikal dan numerikal.
+
 Dengan kelebihan ini, Random Forest adalah pilihan tepat untuk memprediksi pengunduran diri karyawan dengan dataset sebanyak 14999.
 
 - Kelebihan:
@@ -151,7 +173,8 @@ Dengan kelebihan ini, Random Forest adalah pilihan tepat untuk memprediksi pengu
 5. Bias terhadap Kelas Mayoritas: Cenderung memilih kelas mayoritas, menyebabkan bias
 
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/RF.png" width="500"/></div>
-Gambar 7. Alur Kerja _Random Forest_
+Gambar 9. Alur Kerja _Random Forest_
+
 Pada tahapan ini proses yang dilakukan terdiri dari pemilihan variabel X yang digunakan sebagai input dan variabel Y sebagai target yaitu mengundurkan diri atau tidak mengundurkan diri. Kemudian dilakukan pembagian dataset menjadi data training dan data testing dengan rasio sebesar 70%:30% dari jumlah dataset sebanyak 14999 data. 
 Untuk hyperparameter yang digunakan pada model ini hanya yaitu :
 1. n_estimators: Hyperparameter ini menentukan jumlah pohon keputusan yang akan dibangun dalam ensemble. Dalam kasus ini, n_estimators diatur ke 10, yang berarti akan ada 10 pohon keputusan dalam model.
@@ -162,7 +185,8 @@ Selanjutnya melakukan penyetelan parameter Random Forest untuk mencapai kinerja 
 ## Evaluation
 Pada tahap ini, untuk mengetahui kinerja performa pada model yang telah dibuat, diperlukan perhitungan matematis untuk menentukan seberapa akurat model dapat memprediksi nilai target, yaitu dengan menggunakan _Confussion Matrix_. _Confussion Matrix_ adalah sebuah metode yang digunakan untuk mengukur kinerja suatu metode _classification_ . Gambar _confusion matrix_ ditunjukkan pada gambar berikut ini:
 <div><img src="https://raw.githubusercontent.com/rifkyms037/Proyek-Pertama-Predictive-Analytics/main/assets/images/confussion.png" width="500"/></div>
-Gambar 8. _Confussion Matrix_
+Gambar 10. _Confussion Matrix_
+
 Keterangan :
 
 1. _True Positive_ (TP) adalah jumlah sampel positif yang berhasil diklasifikasikan dengan benar sebagai positif oleh model klasifikasi.
@@ -199,6 +223,7 @@ Keterangan:
 - FN = False Negative
 
 Berikut merupakan nilai confussion matrix yang diperoleh :
+
 Tabel 2. Evaluasi Performa Model
 |                     |     Predicted Not Left    |     Predicted Left    |
 |---------------------|---------------------------|-----------------------|
@@ -224,7 +249,9 @@ Kemudian, untuk menghitung recall dilakukan pada persamaan _recall_ sebagai beri
 
 Setelah melakukan perhitungan performa model, diperoleh tingkat akurasi sebesar 98.13%, presisi sebesar 99.48% dan recall sebesar 96.79%. Sehingga prediksi pengunduran diri karyawan menggunakan confussion matrix dapat dikategorikan sebagai excellent classification (Koniyo & Sudarma, 2020)
 
-Referensi
+Berdasarkan hasil proyek yang telah dilakukan, diperoleh evaluasi model pada Confussion Matrix menghasilkan akurasi sebesar 98.13%, precision sebesar 99.48% dan recall sebesar 96.79% yang dapat disimpulkan bahwa model memiliki kemampuan yang baik untuk memprediksi pengunduran diri karyawan. Dengan demikian, perusahaan dapat meningkatkan retensi karyawan dengan langkah-langkah pencegahan yang tepat, seperti peningkatan kepuasan kerja dan pengembangan karir. Ini juga dapat menghemat biaya penggantian karyawan dan memberikan alat berbasis data bagi manajer untuk pengambilan keputusan yang lebih terinformasi dan strategis dalam manajemen sumber daya manusia.
+
+###Referensi
 
 Koniyo, M. H., & Sudarma, M. (2020). Comparison of Data Mining Classification Algorithm Performance for Data Prediction Type of Social Assistance Distribution. Conrist 2019, 336–342. https://doi.org/10.5220/0009910003360342
   
